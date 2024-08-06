@@ -29,7 +29,7 @@ export default createStore({
   actions: {
     getPopularMovies({commit}, payload){
       return new Promise((resolve,reject)=>{
-        axios.get('http://www.omdbapi.com/?s=movie&apikey=97b8cf46&y=2024')
+        axios.get('https://www.omdbapi.com/?s=movie&apikey=97b8cf46&y=2024')
         .then(response => {
           commit('SET_POPULAR_MOVIES',response.data)
           resolve(response)
@@ -41,7 +41,7 @@ export default createStore({
     },
     getDeadpoolMovies({commit},payload){
       return new Promise((resolve,reject)=>{
-        axios.get('http://www.omdbapi.com/?type=movie&apikey=97b8cf46&s=Deadpool')
+        axios.get('https://www.omdbapi.com/?type=movie&apikey=97b8cf46&s=Deadpool')
         .then(response =>{
           commit('SET_DEADPOOL_MOVIES',response.data)
           resolve(response)
@@ -53,7 +53,7 @@ export default createStore({
     },
     getNarutoMoviesSeries({commit},payload){
       return new Promise((resolve,reject)=>{
-        axios.get('http://www.omdbapi.com/?apikey=97b8cf46&s=Naruto')
+        axios.get('https://www.omdbapi.com/?apikey=97b8cf46&s=Naruto')
         .then(response =>{
           commit('SET_NARUTO_MOVIES_SERIES',response.data)
           resolve(response)
@@ -66,7 +66,7 @@ export default createStore({
     getSearchResult({commit},query){
       commit('SET_IS_SEARCHING', true)
       return new Promise((resolve,reject)=>{
-        axios.get(`http://www.omdbapi.com/?apikey=97b8cf46&s=${query}`)
+        axios.get(`https://www.omdbapi.com/?apikey=97b8cf46&s=${query}`)
         .then(response =>{
           commit('SET_SEARCH_RESULT',response.data)
           resolve(response)
@@ -82,7 +82,7 @@ export default createStore({
     },
     getMovieDetails(context, imdbID) {
       return new Promise((resolve, reject) => {
-        axios.get(`http://www.omdbapi.com/?i=${imdbID}&apikey=97b8cf46`)
+        axios.get(`https://www.omdbapi.com/?i=${imdbID}&apikey=97b8cf46`)
           .then(response => {
             resolve(response.data);
           })

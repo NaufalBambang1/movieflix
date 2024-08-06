@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-5">
+  <div class="pb-5" style="min-height: 100vh;">
     <section id="navbar" class="container-dqa pt-2 pb-2 pl-3 pr-3" style="background-color: rgb(18,18,18);">
       <div class="d-flex justify-space-between">
         <div class="logo">
@@ -36,7 +36,7 @@
       </div>
     </section>
 
-    <section v-if="!isSearching" id="content" class="container-dqa pl-3 pr-3">
+    <section v-if="!isSearching" id="content" class="container-dqa pl-3 pr-3" >
       <!-- Movie Popular -->
       <div class="pt-4">
         <span class="fw-600 fs-24">Movie Terpopular di 2024</span>
@@ -173,7 +173,7 @@
       </div>
     </section>
 
-    <section v-else id="searchResult" class="container-dqa pl-3 pr-3" style="height: 93vh">
+    <section v-else id="searchResult" class="container-dqa pl-3 pr-3" style="min-height: 93vh">
       <div  class="pt-4">
         <span class="fw-600 fs-24">Hasil Pencarian</span>
         <swiper
